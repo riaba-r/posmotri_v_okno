@@ -150,6 +150,30 @@ white-space: nowrap;
   display: block;
   color: #FFF;
   text-decoration: none;
+  margin: 2px;
+}
+
+.content__card-link_current {
+  background-color:#545050;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 5px;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #FFF;
 }
 
 .content__video-card-title {
@@ -161,14 +185,12 @@ white-space: nowrap;
   text-transform: uppercase;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
 }
 
 .content__video-card-description {
   line-height: 16.2px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
 }
 
 .button {
@@ -184,13 +206,35 @@ white-space: nowrap;
   border: 1px solid #FFF;
 }
 
+.button:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.button:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.button:active {
+  background-color: #545050;
+  text-decoration: none;
+}
+
 .search-form__submit-button {
   width: 194px;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .more-button {
   width: 399px;
+  cursor: pointer;
 }
 
 .search-form__fieldset {
@@ -210,6 +254,7 @@ white-space: nowrap;
 }
 
 .search-form__textfield {
+  appearance: none;
   border: none;
   min-width: 225px;
   background-color: transparent;
@@ -233,10 +278,23 @@ white-space: nowrap;
   display: flex;
   flex-direction: row;
   gap: 5px;
+  cursor: pointer;
+  padding: 2px;
 }
 
-.search-form__label:has(.search-form__textfield:focus-visible) {
-  border: 1px solid #FFF;
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.search-form__label:has(.search-form__textfield:focus) {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.search-form__label:has(.search-form__textfield:focus-visible, .search-form__checkbox:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 .search-form__checkbox-list {
@@ -249,9 +307,23 @@ white-space: nowrap;
   display: block;
   width: 19px;
   height: 19px;
-  border: 1px solid #FFF;
+  position: relative;
+  border: solid 1px #FFF;
 }
 
-.content__card-link_current {
-  background-color:#545050;
+.search-form__pseudo-checkbox::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #FFF;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+input[type=checkbox]:checked + .search-form__pseudo-checkbox::before {
+  opacity: 1;
 }
