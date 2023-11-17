@@ -9,15 +9,16 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
-  height: 800px;
   block-size: 100%;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  padding: 133px 30px;
 }
 
 h1,
@@ -41,12 +42,12 @@ ol {
 
 .visually-hidden {
   clip: rect(0 0 0 0);
-clip-path: inset(50%);
+  clip-path: inset(50%);
   width: 1px;
-height: 1px;
-overflow: hidden;
-position: absolute;
-white-space: nowrap;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
 }
 
 .content {
@@ -56,13 +57,12 @@ white-space: nowrap;
   align-items: flex-end;
   gap: 30px;
   width: 1140px;
-  height: 534px;
 }
 
 .search-form {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-end;
   width: 100%;
 }
 
@@ -71,7 +71,6 @@ white-space: nowrap;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
-  height: 456px;
 }
 
 .result__video-container {
@@ -86,7 +85,6 @@ white-space: nowrap;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  block-size: 100%;
 }
 
 .content__details {
@@ -130,7 +128,7 @@ white-space: nowrap;
 }
 
 .title {
-  font-family: Oswald;
+  font-family: 'Oswald', sans-serif;
   font-size: 75px;
   font-style: normal;
   font-weight: 700;
@@ -173,7 +171,7 @@ white-space: nowrap;
 }
 
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: 'Oswald', sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -186,20 +184,20 @@ white-space: nowrap;
 .content__video-card-description {
   line-height: 16.2px;
   text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .button {
   height: 34px;
   color: #FFF;
   text-align: center;
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   background-color: transparent;
   border: 1px solid #FFF;
+  cursor: pointer;
 }
 
 .button:focus {
@@ -225,12 +223,10 @@ white-space: nowrap;
 .search-form__submit-button {
   width: 194px;
   margin-top: 20px;
-  cursor: pointer;
 }
 
 .more-button {
   width: 399px;
-  cursor: pointer;
 }
 
 .search-form__fieldset {
@@ -242,7 +238,7 @@ white-space: nowrap;
 }
 
 .search-form__fieldset-title {
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -254,10 +250,9 @@ white-space: nowrap;
   border: none;
   min-width: 225px;
   background-color: transparent;
-  height: 27px;
   border-top: 1px solid #FFF;
   border-bottom: 1px solid #FFF;
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
